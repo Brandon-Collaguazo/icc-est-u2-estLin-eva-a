@@ -19,10 +19,11 @@ public class LogicaClasificacion {
         while(!cola.isEmpty()) {
             pilaAux.push(cola.poll());
         }
+        LinkedList<String> colaInv = new LinkedList<>();
         while (!pilaAux.isEmpty()) {
             cola.offer(pilaAux.pop());
         }
-        return new LinkedList<>(pilaAux); // Simulación de resultado
+        return cola; // Simulación de resultado
     }
 
     /**
