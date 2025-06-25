@@ -16,11 +16,11 @@ public class LogicaClasificacion {
      */
     public Queue<String> invertirColaNombres(Queue<String> cola) {
         Stack<String> pilaAux = new Stack<>();
-        for(String i : cola) {
-            String aux = cola.poll();
-            if(!cola.isEmpty() && cola.peek().compareTo(aux) > 0) {
-                pilaAux.push(aux);
-            }
+        while(!cola.isEmpty()) {
+            pilaAux.push(cola.poll());
+        }
+        while (!pilaAux.isEmpty()) {
+            cola.offer(pilaAux.pop());
         }
         return new LinkedList<>(pilaAux); // Simulación de resultado
     }
